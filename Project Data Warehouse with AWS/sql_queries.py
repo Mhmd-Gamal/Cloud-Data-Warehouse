@@ -67,14 +67,14 @@ songplay_table_create = ("""
 CREATE TABLE IF NOT EXISTS fact_songplay
 (
 songplay_id          INTEGER IDENTITY(0,1) PRIMARY KEY sortkey,
-start_time           TIMESTAMP,
-user_id              INTEGER,
-level                VARCHAR,
-song_id              VARCHAR,
-artist_id            VARCHAR,
-session_id           INTEGER,
-location             VARCHAR,
-user_agent           VARCHAR
+start_time           TIMESTAMP NOT NULL,
+user_id              INTEGER NOT NULL,
+level                VARCHAR NOT NULL,
+song_id              VARCHAR NOT NULL,
+artist_id            VARCHAR NOT NULL,
+session_id           INTEGER NOT NULL,
+location             VARCHAR NOT NULL,
+user_agent           VARCHAR NOT NULL
 );
 """)
 
