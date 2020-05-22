@@ -156,6 +156,7 @@ SELECT DISTINCT to_timestamp(to_char(se.ts, '9999-99-99 99:99:99'),'YYYY-MM-DD H
                 se.location as location,
                 se.userAgent as user_agent
 FROM staging_events se
+WHERE page = 'NextSong'
 JOIN staging_songs ss ON se.song = ss.title AND se.artist = ss.artist_name;
 """)
 
@@ -167,6 +168,7 @@ SELECT DISTINCT userId as user_id,
                 gender as gender,
                 level as level
 FROM staging_events
+WHERE page = 'NextSong'
 where userId IS NOT NULL;
 """)
 
